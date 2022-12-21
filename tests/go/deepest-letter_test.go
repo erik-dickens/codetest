@@ -10,7 +10,7 @@ func TestGetDeepestLetter(t *testing.T) {
 	testCases := []letterTestCase{
 		{input: "a(b)c", expected: 'b'},
 		{input: "((a))(((M)))(c)(D)(e)(((f))(((G))))h(i)", expected: 'g'},
-		{input: "((A)(b)c", expected: 'c'},
+		{input: "((A)(b)c", expected: '?'},
 		{input: "(a)((G)c)", expected: 'g'},
 		{input: "(8)", expected: '?'},
 		{input: "(!)", expected: '?'},
