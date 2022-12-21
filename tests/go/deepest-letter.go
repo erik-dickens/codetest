@@ -1,8 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func getDeepestLetter(input string) rune {
+
+	input = strings.ToLower(input)
+
 	depthArr := make([]int, 0)
 	var depth, maxDepth int = 0, 0
 	for i := 0; i < len(input); i++ {
@@ -37,18 +43,18 @@ func getDeepestLetter(input string) rune {
 				break
 			}
 			if input[i] < 'a' || input[i] > 'z' {
-				fmt.Println("Character must be a-z (lower case)")
+				fmt.Println("Character must be letters a-z")
 				deepestLetter = '?'
 				break
 			}
 			deepestLetter = rune(input[i])
 		}
 	}
-	
+
 	fmt.Printf("input: %v\n", input)
 	fmt.Printf("depthArr: %v\n", depthArr)
 	fmt.Printf("deepestLetter: %v\ndepth: %v\n", string(deepestLetter), maxDepth)
-	var a, z rune = 'a', 'z'
+	var a, z rune = 'A', 'Z'
 	fmt.Printf("%v, %v", a, z)
 	if depth != 0 {
 		fmt.Println("Malformed string")
